@@ -156,6 +156,6 @@
 ## 赞助
 
 <p style="text-align: center;">
-<img src="https://github.com/Web-Coke/DataBox/blob/main/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
-<img src="https://github.com/Web-Coke/DataBox/blob/main/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
+<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
+<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
 </p>
