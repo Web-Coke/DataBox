@@ -5,6 +5,27 @@
     <a href="https://github.com/Web-Coke/DataBox/README-EN_US.md">English</a>
 </p>
 <p>
+DataBox是一个基于[Excel-DNA](https://excel-dna.net/)的Excel加载项
+
+部分核心功能使用[Rust](https://www.rust-lang.org/)实现, 速度快到不可思议
+
+如果您是普通用户, 希望DataBox可助您高效办公
+
+如果您是程序员, 希望DataBox给您带来新的启发
+
+## 安装使用
+
+### 自动安装
+
+> TODO
+
+### 手动安装
+
+> TODO
+
+## 从源码构建
+
+> TODO
 
 ## 函数介绍
 
@@ -140,6 +161,21 @@
 | u    | 默认匹配规则                                   |
 | x    | 注释模式, 忽略空格并允许行注释, 注释以`#`开头  |
 
+## 贡献者
+
+<a href="https://github.com/Web-Coke/DataBox/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Web-Coke/DataBox" />
+</a>
+
+## 赞助
+
+您毫不吝啬滴赞赏是对此项目的最大肯定
+
+<p style="text-align: center;">
+<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
+<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
+</p>
+
 ## 现存问题说明
 
 - 在旧版WPS中溢出型函数的计算结果不会完整显示, WPS最新版与Excel中则可以正常显示计算结果, 旧版WPS不支持溢出型函数
@@ -154,17 +190,3 @@
 > WeChat:`C0-Coke`
 >
 > Email:`web-chang@foxmail.com`
-
-
-## 贡献者
-
-<a href="https://github.com/Web-Coke/DataBox/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Web-Coke/DataBox" />
-</a>
-
-## 赞助
-
-<p style="text-align: center;">
-<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
-<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
-</p>
