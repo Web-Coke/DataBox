@@ -5,7 +5,7 @@
     <a href="https://github.com/Web-Coke/DataBox/README-EN_US.md">English</a>
 </p>
 <p>
-DataBox是一个基于[Excel-DNA](https://excel-dna.net/)的Excel加载项
+DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 部分核心功能使用[Rust](https://www.rust-lang.org/)实现, 速度快到不可思议
 
