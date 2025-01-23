@@ -29,11 +29,11 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 1. 拉取此项目
 2. 安装Rust(Version>=1.80.0)
 3. 安装Python(Version>=3.8.1)
-5. 运行此项目的build.py
-6. 安装Visual Studio
-7. 打开项目的DataBox.sln
-8. 还原NuGet程序包
-9. 编译DataBox
+4. 运行此项目的build.py
+5. 安装Visual Studio
+6. 打开项目的DataBox.sln
+7. 还原NuGet程序包
+8. 编译DataBox
 ```
 
 
