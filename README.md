@@ -25,7 +25,14 @@ DataBox是一个基于[Excel-DNA](https://excel-dna.net/)的Excel加载项
 
 ## 从源码构建
 
-> TODO
+```
+1. 拉取此项目
+1. 安装Rust(Version>=1.80.0)
+2. 安装Python(Version>=3.8.1)
+3. 安装
+```
+
+
 
 ## 函数介绍
 
