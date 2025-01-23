@@ -11,7 +11,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 如果您是普通用户, 希望DataBox可助您高效办公
 
-如果您是程序员, 希望DataBox给您带来新的启发
+如果您是程序员, 希望DataBox给您带来新的启发(注释已经抓紧再写!)
 
 ## 安装使用
 
@@ -27,17 +27,19 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ```
 1. 拉取此项目
-1. 安装Rust(Version>=1.80.0)
-2. 安装Python(Version>=3.8.1)
-3. 安装
+2. 安装Rust(Version>=1.80.0)
+3. 安装Python(Version>=3.8.1)
+5. 运行此项目的build.py
+6. 安装Visual Studio
+7. 打开项目的DataBox.sln
+8. 还原NuGet程序包
+9. 编译DataBox
 ```
 
 
 
 ## 函数介绍
 
-> [!TIP]
->
 > 函数名称加粗的函数为溢出型函数
 >
 > 参数名称加粗的参数可为范围参数
@@ -81,9 +83,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ### 5 数据快查
 
-> [!CAUTION]
->
-> 在使用以下函数前请先绑定数据
+> 在使用以下函数前请先在功能区中绑定数据
 
 | 函数名称                             | 函数说明                         | 参数说明                                         |
 | :----------------------------------- | -------------------------------- | ------------------------------------------------ |
@@ -102,8 +102,6 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ## 正则表达式
 
-> [!TIP]
->
 > 正则表达式在线学习or练习[网站](https://regex101.com/)(https://regex101.com/)
 >
 > 设置中文:点击左边设置按钮->`Language`选项选择`Chinese`
@@ -190,8 +188,6 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ---
 
-> [!TIP]
->
 > 加载项使用中有任何建议、反馈、疑问请与我联系
 >
 > WeChat:`C0-Coke`
