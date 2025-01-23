@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI onLoad="LoadRibbon" xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+	<ribbon>
+		<tabs>
+			<tab id="DataBox" getLabel="Label">
+				<group id="DataQuickFind" getLabel="Label">
+					<button id="BindingBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+				</group>
+				<group id="BatchExtraction" getLabel="Label">
+					<button id="LaunchBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+					<separator id="Separator" />
+                    <button id="ConfigBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+                </group>
+				<group id="DataBoxInfo" getLabel="Label">
+					<button id="BoxInfoBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>

@@ -1,0 +1,10 @@
+/.vs/
+/.vscode/
+/DataBox/.vs/
+/DataBox/bin/
+/DataBox/obj/
+/Install/.vs/
+/Install/bin/
+/Install/obj/
+/target/
+/Cargo.lock

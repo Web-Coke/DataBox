@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78145792-B33D-4306-9F10-715ED71D4844}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataBox</RootNamespace>
+    <AssemblyName>DataBox</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ZH_CN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;ZH_CN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Language.cs" />
+    <Compile Include="Fun\Geo.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="Fun\Range.cs" />
+    <Compile Include="Fun\Text.cs" />
+    <Compile Include="Fun\Time.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon\NewConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ribbon\NewConfig.Designer.cs">
+      <DependentUpon>NewConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon\DataBoxInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ribbon\DataBoxInfo.Designer.cs">
+      <DependentUpon>DataBoxInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon\Fun\BatchExtraction.cs" />
+    <Compile Include="Ribbon\Fun\DataQuickFind.cs" />
+    <Compile Include="Ribbon\Basics.cs" />
+    <Compile Include="RustFun\Link.cs" />
+    <Compile Include="WPSReg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBox-AddIn.dna" />
+    <None Include="DataBox-AddIn.xll.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ExcelDna.AddIn">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDna.Integration">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDna.IntelliSense">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDna.Interop">
+      <Version>15.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.7.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon\NewConfig.resx">
+      <DependentUpon>NewConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Ribbon\Src\开始提取.png" />
+    <None Include="Ribbon\Src\新建配置.png" />
+    <Content Include="Ribbon\Src\查看信息.png" />
+    <EmbeddedResource Include="Ribbon\DataBoxInfo.resx">
+      <DependentUpon>DataBoxInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon\RibbonUI.xml" />
+    <Content Include="Ribbon\Src\AliPay.png" />
+    <Content Include="Ribbon\Src\WeChat.png" />
+    <Content Include="Ribbon\Src\绑定数据.png" />
+    <Content Include="Ribbon\Src\解绑数据.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

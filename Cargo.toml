@@ -1,0 +1,26 @@
+[workspace]
+members = ["box_core"]
+resolver = "2"
+
+[workspace.package]
+version = "1.1.58"
+edition = "2021"
+authors = ["WebChang"]
+
+[profile.dev]
+opt-level = 3
+overflow-checks = false
+
+[profile.release]
+opt-level = 3
+debug = false
+split-debuginfo = "off"
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = "unwind"
+strip = true
+incremental = false
+codegen-units = 1
+
+# cargo build --release -p box_core

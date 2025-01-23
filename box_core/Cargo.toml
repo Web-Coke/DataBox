@@ -1,0 +1,15 @@
+[package]
+name = "tool_core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[lib]
+name = "core"
+crate-type = ["dylib"]
+
+[dependencies]
+regex = "*"
+reqwest = { version = "*", features = ["blocking", "json"] }
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
