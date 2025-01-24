@@ -1,0 +1,8 @@
+[package]
+name = "box_load"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+winreg = "0.55"

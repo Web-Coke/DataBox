@@ -68,7 +68,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 | :---------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | **IsMatch**(**Input**, Pattern)           | 检查输入的字符串是否可被正则表达式匹配<br/>匹配成功返回True  失败则返回False | **Input**:输入的字符串<br/>Pattern:正则表达式                |
 | **Matches**(Input, Pattern, <u>Label</u>) | 返回输入的字符串在正则表达式中匹配到的所有(标签)内容         | Input:输入的字符串<br/>Pattern:正则表达式<br/><u>Label</u>:标签, 可选参数, 标签需带"$"号 |
-| **Replaces**(**Input**, Pattern, Replace) | 替换输入的字符串中被正则表达式匹配到的部分为指定字符串       | Input:输入的字符串<br/>Pattern:正则表达式<br/>Replace:指定字符串, 标签需带"$"号 |
+| **Replaces**(**Input**, Pattern, Replace) | 替换输入的字符串中被正则表达式匹配到的部分为指定字符串       | **Input**:输入的字符串<br/>Pattern:正则表达式<br/>Replace:指定字符串, 标签需带"$"号 |
 
 ### 4 范围处理
 

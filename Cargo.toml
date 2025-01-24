@@ -1,5 +1,5 @@
 [workspace]
-members = ["box_core"]
+members = ["box_core", "box_load"]
 resolver = "2"
 
 [workspace.package]

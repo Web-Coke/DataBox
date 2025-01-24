@@ -132,7 +132,7 @@ namespace DataBox.Ribbon.Fun
         {
             return ISNone
                 ? ExcelError.ExcelErrorNA
-                : (object)DataQuickFindRS.DQFFinds(IndexPtr, new RefObj(Key)).Length;
+                : (object)DataQuickFindRS.DQFCounts(IndexPtr, new RefObj(Key));
         }
 
         [ExcelFunction(

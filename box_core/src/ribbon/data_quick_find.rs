@@ -55,6 +55,19 @@ impl DataQuickFind {
     }
 
     #[no_mangle]
+    pub unsafe extern "C-unwind" fn DQFCounts(
+        bmap: *mut RwLock<BTreeMap<Vec<u16>, Vec<i32>>>,
+        key: RefObj,
+    ) -> i32 {
+        let key = (&*slice_from_raw_parts(key.ptr as *mut u16, key.len as usize)).to_vec();
+        if let Some(val) = (*bmap).read().unwrap().get(&key) {
+            i32::try_from(val.len()).unwrap()
+        } else {
+            0
+        }
+    }
+
+    #[no_mangle]
     pub unsafe extern "C-unwind" fn DQFKeys(
         bmap: *mut RwLock<BTreeMap<Vec<u16>, Vec<i32>>>,
     ) -> RefObj {

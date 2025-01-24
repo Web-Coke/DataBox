@@ -400,6 +400,10 @@ namespace DataBox.RustFun
             public static readonly _DQFFinds DQFFinds = Link.LaodFun<_DQFFinds>("DQFFinds");
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+            public delegate int _DQFCounts(IntPtr Self, RefObj Key);
+            public static readonly _DQFCounts DQFCounts = Link.LaodFun<_DQFCounts>("DQFCounts");
+
+            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             public delegate RefObj _DQFKeys(IntPtr Self);
             public static readonly _DQFKeys DQFKeys = Link.LaodFun<_DQFKeys>("DQFKeys");
 
