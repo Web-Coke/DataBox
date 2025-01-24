@@ -246,7 +246,11 @@ namespace DataBox.RustFun
     public static class TextRS
     {
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate bool _IsMatch(RefObj Input, RefObj Pattern);
+        public delegate IntPtr _RegexCreate(RefObj Pattern);
+        public static readonly _RegexCreate RegexCreate = Link.LaodFun<_RegexCreate>("RegexCreate");
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate bool _IsMatch(RefObj Input, IntPtr Pattern);
         public static readonly _IsMatch IsMatch = Link.LaodFun<_IsMatch>("IsMatch");
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
@@ -254,8 +258,22 @@ namespace DataBox.RustFun
         public static readonly _Matches Matches = Link.LaodFun<_Matches>("Matches");
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate RefObj _Replaces(RefObj Input, RefObj Pattern, RefObj Replace);
+        public delegate RefObj _Replaces(RefObj Input, IntPtr Pattern, IntPtr Replace);
         public static readonly _Replaces Replaces = Link.LaodFun<_Replaces>("Replaces");
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void _RegexDispose(IntPtr Pattern);
+        public static readonly _RegexDispose RegexDispose = Link.LaodFun<_RegexDispose>(
+            "RegexDispose"
+        );
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate IntPtr _FixedStr(RefObj Input);
+        public static readonly _FixedStr FixedStr = Link.LaodFun<_FixedStr>("FixedStr");
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate RefObj _DropStr(IntPtr Input);
+        public static readonly _DropStr DropStr = Link.LaodFun<_DropStr>("DropStr");
     }
 
     public static class TimeRS
