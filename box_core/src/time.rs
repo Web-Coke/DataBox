@@ -1,5 +1,7 @@
 use crate::{ptr_is_null, Iterators, RefObj};
 
+// 月份数组
+// Array of months
 const MON_LIST: [[u64; 13]; 2] = [
     [
         0x00, 0x00, 0x1F, 0x3B, 0x5A, 0x78, 0x97, 0xB5, 0xD4, 0xF3, 0x111, 0x130, 0x14E,
@@ -9,6 +11,8 @@ const MON_LIST: [[u64; 13]; 2] = [
     ],
 ];
 
+// 判断是否闰年
+// Determine whether it is a leap year
 macro_rules! leap_year {
     ($year:expr) => {
         $year % 0x04 == 0x00 && ($year % 0x64 != 0x00 || $year % 0x0190 == 0x00)
@@ -22,6 +26,8 @@ pub struct TimeStamp {
 }
 
 impl From<SimpleTime> for TimeStamp {
+    // 将公元 0000-01-01 00:00:00 定义为0秒
+    // Define 0000-01-01 00:00:00 as 0 seconds
     fn from(mut value: SimpleTime) -> Self {
         value.day += unsafe {
             *MON_LIST
@@ -111,7 +117,8 @@ impl SimpleTime {
         )
     }
 
-    // 只支持解析YYYY-MM-DD HH:MM:SS
+    // 只支持解析yyyy-MM-dd HH:mm:ss格式的时间
+    // Only the time in the yyyy-MM-dd HH:mm:ss format can be parsed
     fn new(mut time: Iterators) -> Self {
         let mut fun = |i: u64, n: u64| -> u64 {
             let time = time.next_number().unwrap();
@@ -223,15 +230,20 @@ impl Include {
         mark + ((time_n.ymd - time_i.ymd) / 0x015180) * (self.include_n - self.include_i)
     }
 
-    // to_day 计算在内的时间在当天 如 12:00:00-14:00:00   2小时
+    // to_day
+    // 计算在内的时间在当天 如 12:00:00-14:00:00   2小时
+    // The time included in the calculation is 2 hours on the day such as 12:00:00-14:00:00
     pub fn _t(&self, time_i: TimeStamp, time_n: TimeStamp) -> u64 {
         self.__subtraction__(time_i, time_n)
     }
-    // next_day 计算在内的时间在次日 如 14:00:00-12:00:00  22小时
+    // next_day
+    // 计算在内的时间在次日 如 14:00:00-12:00:00  22小时
+    // The time included in the calculation is on the next day such as 14:00:00-12:00:00 for 22 hours
     pub fn _n(&self, time_i: TimeStamp, time_n: TimeStamp) -> u64 {
         ((time_n.ymd + time_n.hms) - (time_i.ymd + time_i.hms))
             - self.__subtraction__(time_i, time_n)
     }
+
     pub fn subtraction(&self, time_i: TimeStamp, time_n: TimeStamp) -> u64 {
         let (time_i, time_n) = if time_i > time_n {
             (time_n, time_i)
