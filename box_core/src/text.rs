@@ -3,10 +3,13 @@ use regex::Regex;
 use std::ffi::c_void;
 
 #[no_mangle]
-pub unsafe extern "C-unwind" fn IsMatch(input: RefObj, pattern: RefObj) -> bool {
-    Regex::new(&pattern.into_str())
-        .unwrap()
-        .is_match(&input.into_str())
+pub unsafe extern "C-unwind" fn RegexCreate(pattern: RefObj) -> *mut Regex {
+    Box::into_raw(Box::new(Regex::new(&pattern.into_str()).unwrap()))
+}
+
+#[no_mangle]
+pub unsafe extern "C-unwind" fn IsMatch(input: RefObj, pattern: *mut Regex) -> bool {
+    (*pattern).is_match(&input.into_str())
 }
 
 #[no_mangle]
@@ -35,14 +38,25 @@ pub unsafe extern "C-unwind" fn Matches(input: RefObj, pattern: RefObj, name: Re
 #[no_mangle]
 pub unsafe extern "C-unwind" fn Replaces(
     input: RefObj,
-    pattern: RefObj,
-    replace: RefObj,
+    pattern: *mut Regex,
+    replace: *mut String,
 ) -> RefObj {
-    RefObj::from_str(
-        Regex::new(&pattern.into_str())
-            .unwrap()
-            .replace_all(&input.into_str(), replace.into_str()),
-    )
+    RefObj::from_str((*pattern).replace_all(&input.into_str(), &*replace))
+}
+
+#[no_mangle]
+pub unsafe extern "C-unwind" fn RegexDispose(pattern: *mut Regex) {
+    drop(Box::from_raw(pattern))
+}
+
+#[no_mangle]
+pub unsafe extern "C-unwind" fn fixed_str(input: RefObj) -> *mut String {
+    Box::into_raw(Box::new(input.into_str()))
+}
+
+#[no_mangle]
+pub unsafe extern "C-unwind" fn drop_str(input: *mut String) {
+    drop(Box::from_raw(input))
 }
 
 #[cfg(test)]
@@ -63,7 +77,7 @@ mod test {
             unsafe {
                 assert!(IsMatch(
                     RefObj::from_str(r"2024/11/01 08:00:00"),
-                    RefObj::from_str(r"^[[:ascii:]]*$")
+                    RegexCreate(RefObj::from_str(r"^[[:ascii:]]*$"))
                 ));
             }
         });
@@ -71,7 +85,7 @@ mod test {
             unsafe {
                 assert!(IsMatch(
                     RefObj::from_str(r"I categorically deny having triskaidekaphobia."),
-                    RefObj::from_str(r"\b\w{13}\b")
+                    RegexCreate(RefObj::from_str(r"\b\w{13}\b"))
                 ));
             }
         });

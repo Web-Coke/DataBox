@@ -24,15 +24,6 @@ macro_rules! func {
     }};
 }
 
-#[macro_export]
-macro_rules! ptr_is_null {
-    ($ptr:expr) => {
-        if $ptr.is_null() {
-            panic!("传参前不检查一下吗?")
-        }
-    };
-}
-
 pub struct Iterators<'a> {
     ptr: *const u8,
     len: *const u8,
@@ -207,25 +198,25 @@ impl RefObj {
                 drop(Box::from_raw(slice_from_raw_parts_mut(
                     self.ptr as *mut u8,
                     self.len as usize,
-                )));
+                )))
             }
             2 => {
                 drop(Box::from_raw(slice_from_raw_parts_mut(
                     self.ptr as *mut u16,
                     self.len as usize,
-                )));
+                )))
             }
             4 => {
                 drop(Box::from_raw(slice_from_raw_parts_mut(
                     self.ptr as *mut u32,
                     self.len as usize,
-                )));
+                )))
             }
             8 => {
                 drop(Box::from_raw(slice_from_raw_parts_mut(
                     self.ptr as *mut u64,
                     self.len as usize,
-                )));
+                )))
             }
             _ => return,
         }

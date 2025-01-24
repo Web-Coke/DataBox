@@ -1,4 +1,4 @@
-use crate::{ptr_is_null, RefObj};
+use crate::RefObj;
 use std::{
     collections::BTreeMap,
     ffi::c_void,
@@ -20,7 +20,6 @@ impl DataQuickFind {
         key: RefObj,
         idx: i32,
     ) {
-        ptr_is_null!(bmap);
         let key = (&*slice_from_raw_parts(key.ptr as *mut u16, key.len as usize)).to_vec();
         let mut map = (*bmap).write().unwrap();
         if let Some(v) = map.get_mut(&key) {
@@ -39,7 +38,6 @@ impl DataQuickFind {
         bmap: *mut RwLock<BTreeMap<Vec<u16>, Vec<i32>>>,
         key: RefObj,
     ) -> RefObj {
-        ptr_is_null!(bmap);
         let key = (&*slice_from_raw_parts(key.ptr as *mut u16, key.len as usize)).to_vec();
         if let Some(val) = (*bmap).read().unwrap().get(&key) {
             RefObj {
@@ -60,7 +58,6 @@ impl DataQuickFind {
     pub unsafe extern "C-unwind" fn DQFKeys(
         bmap: *mut RwLock<BTreeMap<Vec<u16>, Vec<i32>>>,
     ) -> RefObj {
-        ptr_is_null!(bmap);
         let keys = (*bmap)
             .read()
             .unwrap()
@@ -80,7 +77,6 @@ impl DataQuickFind {
 
     #[no_mangle]
     pub unsafe extern "C-unwind" fn DQFDispose(bmap: *mut RwLock<BTreeMap<Vec<u16>, Vec<i32>>>) {
-        ptr_is_null!(bmap);
         drop(Box::from_raw(bmap))
     }
 }

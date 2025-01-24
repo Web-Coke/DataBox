@@ -1,4 +1,4 @@
-use crate::{ptr_is_null, Iterators, RefObj};
+use crate::{Iterators, RefObj};
 
 // 月份数组
 // Array of months
@@ -286,14 +286,12 @@ pub unsafe extern "C-unwind" fn TimeSubCompute(
     time_i: SimpleTime,
     time_n: SimpleTime,
 ) -> i64 {
-    ptr_is_null!(time);
     let (time_i, time_n) = (TimeStamp::from(time_i), TimeStamp::from(time_n));
     (&*time).subtraction(time_i, time_n) as i64
 }
 
 #[no_mangle]
 pub unsafe extern "C-unwind" fn TimeSubDispose(time: *mut Include) {
-    ptr_is_null!(time);
     drop(Box::from_raw(time))
 }
 
