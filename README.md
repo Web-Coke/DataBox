@@ -188,7 +188,7 @@ DataBox是一个开源项目, 您毫不吝啬滴赞赏和Star是对此项目的�
 
 ## 开源协议
 
-DataBox采用[MIT](LICENSE.txt)开源协议
+DataBox采用[MIT](LICENSE)开源协议
 
 ## 现存问题说明
 
