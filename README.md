@@ -35,7 +35,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ## 示例
 
-为了让您快速使用DataBox, 此项目提供了一个[示例](https://github.com/Web-Coke/DataBox/blob/main/DataBox/Examples/示例.xlsx)文件
+为了让您快速使用DataBox, 此项目提供了一个[示例](https://github.com/Web-Coke/DataBox/blob/main/Examples/示例.xlsx)文件
 
 ## 函数介绍
 
@@ -173,7 +173,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ## 赞助
 
-您毫不吝啬滴赞赏是对此项目的最大肯定
+DataBox是一个开源项目, 您毫不吝啬滴赞赏和Star是对此项目的最大肯定
 
 <p style="text-align: center;">
 <img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>

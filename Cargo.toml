@@ -3,7 +3,7 @@ members = ["box_core"]
 resolver = "2"
 
 [workspace.package]
-version = "1.1.58"
+version = "1.1.60"
 edition = "2021"
 authors = ["WebChang"]
 

@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      生成号
 //      修订号
 //
-[assembly: AssemblyVersion("1.1.5.8")]
+[assembly: AssemblyVersion("1.1.6.0")]
 [assembly: NeutralResourcesLanguage("zh-Hans")]
