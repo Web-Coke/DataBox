@@ -180,6 +180,10 @@ DataBox是一个开源项目, 您毫不吝啬滴赞赏和Star是对此项目的�
 <img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
 </p>
 
+## 开源协议
+
+DataBox采用[MIT](LICENSE.txt)开源协议
+
 ## 现存问题说明
 
 - 在旧版WPS中溢出型函数的计算结果不会完整显示, WPS最新版与Excel中则可以正常显示计算结果, 旧版WPS不支持溢出型函数
