@@ -18,11 +18,11 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ### 自动安装/手动安装
 
-> TODO
+[点击查看](https://github.com/Web-Coke/DataBox/releases/)
 
 ### 从源码构建
 
-```
+```text
 1. 拉取此项目
 2. 安装Rust(Version>=1.80.0)
 3. 安装Python(Version>=3.8.1)
