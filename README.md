@@ -5,6 +5,7 @@
     <a href="https://github.com/Web-Coke/DataBox/README-EN_US.md">English</a>
 </p>
 <p>
+
 DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 部分核心功能使用[Rust](https://www.rust-lang.org/)实现, 速度快到不可思议
@@ -15,15 +16,11 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ## 安装使用
 
-### 自动安装
+### 自动安装/手动安装
 
 > TODO
 
-### 手动安装
-
-> TODO
-
-## 从源码构建
+### 从源码构建
 
 ```
 1. 拉取此项目
@@ -36,7 +33,9 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 8. 编译DataBox
 ```
 
+## 示例
 
+为了让您快速使用DataBox, 此项目提供了一个[示例](https://github.com/Web-Coke/DataBox/blob/main/DataBox/Examples/示例.xlsx)文件
 
 ## 函数介绍
 
@@ -166,7 +165,7 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 | u    | 默认匹配规则                                   |
 | x    | 注释模式, 忽略空格并允许行注释, 注释以`#`开头  |
 
-## 贡献者
+## 贡献
 
 <a href="https://github.com/Web-Coke/DataBox/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Web-Coke/DataBox" />
