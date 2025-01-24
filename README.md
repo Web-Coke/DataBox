@@ -183,7 +183,7 @@ DataBox是一个开源项目, 您毫不吝啬滴赞赏和Star是对此项目的�
 
 <p style="text-align: center;">
 <img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
-<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeiChat" width="180"/>
+<img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeChat" width="180"/>
 </p>
 
 ## 开源协议
