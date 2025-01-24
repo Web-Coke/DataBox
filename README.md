@@ -167,6 +167,12 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 
 ## 贡献
 
+如果您有好的建议, 请复刻Fork本仓库并且创建一个拉取请求(pull request)
+
+当然您也可以提交一个issue, 并且添加标签(enhancement)
+
+不要忘记给项目点一个Star, 再次感谢❗❗❗
+
 <a href="https://github.com/Web-Coke/DataBox/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Web-Coke/DataBox" />
 </a>
