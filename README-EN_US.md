@@ -8,11 +8,11 @@
 
 DataBox is an Excel add-in based on [Excel-DNA](https://github.com/Excel-DNA).
 
-Some of the core features are implemented in [Rust](https://www.rust-lang.org/), which is incredibly fast
+Some of the core features are implemented in [Rust](https://www.rust-lang.org/), It's incredibly fast.
 
-If you are a regular user, you hope that DataBox can help you work efficiently
+If you are a regular user, you hope that DataBox can help you work efficiently.
 
-If you are a programmer, I hope DataBox will inspire you in a new way
+If you are a programmer, I hope DataBox will inspire you in a new way.
 
 ## Install and use
 
@@ -189,12 +189,9 @@ DataBox采用[MIT](LICENSE)开源协议
 ## 现存问题说明
 
 - 在旧版WPS中溢出型函数的计算结果不会完整显示, WPS最新版与Excel中则可以正常显示计算结果, 旧版WPS不支持溢出型函数
-- `GetPOI`与`ToGCJ02`函数中所使用的`Key`需在[高德开放平台](http://lbs.amap.com/)申请`Web服务`类型的`Key`且这两个函数需要网络连接
 
 ---
 
 > 加载项使用中有任何建议、反馈、疑问请与我联系
->
-> WeChat:`C0-Coke`
 >
 > Email:`web-chang@foxmail.com`
