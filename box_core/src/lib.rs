@@ -245,8 +245,6 @@ mod test {
     use super::*;
     #[test]
     fn iterators_test() {
-        println!("{}", func!());
-        println!("{}", unsafe { CoreVersion().into_str() });
         let mut value = Iterators::new(b"2024 11 11 18 48 23");
         while let Some(i) = value.next_number() {
             print!("{}\t", i);
