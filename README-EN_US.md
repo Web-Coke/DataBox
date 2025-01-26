@@ -54,15 +54,13 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | **TimeSub**(**TimeI**, **TimeN**)                            | 计算两个时间的差值<br/>输出以秒为单位                 | TimeI:第一个时间<br/>TimeN:第二个时间                        |
 | **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | 计算两个时间在计算在内时间中的差值<br/>输出以秒为单位 | TimeI:第一个时间<br/>TimeN:第二个时间<br/>Includ:计算在内的时间 |
 
-### 2 坐标计算
+### 2 Coordinate Calculation
 
 | 函数名称                         | 函数说明                                                                        | 参数说明                                                                                |
 | :------------------------------- | :------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
 | Distance(Lon1, Lat1, Lon2, Lat2) | 计算两个WGS84坐标经纬度之间的距离<br/>输出以米为单位 |Lon1:第一个经度<br/>Lat1:第一个纬度<br/>Lon2:第二个经度<br/>Lat2:第二个纬度|
-| **GetPOI**(Lon, Lat, Key)  | 获取WGS84坐标的基本POI信息<br/>Key需在[高德开放平台](http://lbs.amap.com/)申请                                      |Lon:经度<br/>Lat:纬度<br/>Key:服务Key|
-| **ToGCJ02**(Lon, Lat, Key) | 将WGS84坐标转国测局坐标<br/>Key需在[高德开放平台](http://lbs.amap.com/)申请                                      |Lon:经度<br/>Lat:纬度<br/>Key:服务Key|
 
-### 3 文本处理
+### 3 Text Processing
 
 | 函数名称                                  | 函数说明                                                     | 参数说明                                                     |
 | :---------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
@@ -70,7 +68,7 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | **Matches**(Input, Pattern, <u>Label</u>) | 返回输入的字符串在正则表达式中匹配到的所有(标签)内容         | Input:输入的字符串<br/>Pattern:正则表达式<br/><u>Label</u>:标签, 可选参数, 标签需带"$"号 |
 | **Replaces**(**Input**, Pattern, Replace) | 替换输入的字符串中被正则表达式匹配到的部分为指定字符串       | **Input**:输入的字符串<br/>Pattern:正则表达式<br/>Replace:指定字符串, 标签需带"$"号 |
 
-### 4 范围处理
+### 4 Scope Processing
 
 | 函数名称                                  | 函数说明                                                     | 参数说明                                                   |
 | ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
@@ -80,9 +78,9 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | **XORS**(**Lhs**, **Rhs**)                | 将**Lhs**与**Rhs**按顺序进行XOR操作                          | **Lhs**:左值范围<br/>**Rhs**:右值范围                      |
 | **NOTS**(**Array**)                       | 将**Array**进行NOT操作                                       | **Array**:指定范围                                         |
 
-### 5 数据快查
+### 5 Data Quick Find
 
-> 在使用以下函数前请先在功能区中绑定数据
+> Before using the following functions, bind data in the ribbon
 
 | 函数名称                             | 函数说明                         | 参数说明                                         |
 | :----------------------------------- | -------------------------------- | ------------------------------------------------ |
@@ -99,17 +97,15 @@ To get you up and running quickly, this project provides an [Example](https://gi
 |  True `AND` True = False  |  False `OR` True = True  |                      | False `XOR` False = True |
 |  True `AND` True = True  |  False `OR` True = True  |                      | False `XOR` False = False |
 
-## 正则表达式
+## Regular Expression
 
-> 正则表达式在线学习or练习[网站](https://regex101.com/)(https://regex101.com/)
+> Regular Expressions e-learning or practice [website](https://regex101.com/)(https://regex101.com/)
 >
-> 设置中文:点击左边设置按钮->`Language`选项选择`Chinese`
->
-> 请设置`语言风格`为`Rust`
+> Please set `FLAVOR` to `Rust`
 >
 > 正则引擎遵守[Unicode® Technical Standard #18](https://www.unicode.org/reports/tr18/)规范(https://www.unicode.org/reports/tr18/)
 >
-> `字符集`可参考[Regex Tutorial - Unicode Characters and Properties](https://www.regular-expressions.info/unicode.html#prop)(https://www.regular-expressions.info/unicode.html#prop)
+> The `Characters Set` please refer to:[Regex Tutorial - Unicode Characters and Properties](https://www.regular-expressions.info/unicode.html#prop)(https://www.regular-expressions.info/unicode.html#prop)
 
 | 基本表达式   | 描述                                                         |
 | :----------- | ------------------------------------------------------------ |
