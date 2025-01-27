@@ -8,10 +8,12 @@
 				</group>
 				<group id="BatchExtraction" getLabel="Label">
 					<button id="LaunchBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
-					<separator id="Separator" />
-                    <button id="ConfigBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
-                </group>
+					<separator/>
+					<button id="ConfigBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+				</group>
 				<group id="DataBoxInfo" getLabel="Label">
+					<button id="UpdatesBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
+					<separator/>
 					<button id="BoxInfoBtn" getLabel="Label" getImage="Image" onAction="Click" size="large" />
 				</group>
 			</tab>

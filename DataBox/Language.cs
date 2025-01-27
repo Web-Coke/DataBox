@@ -156,12 +156,13 @@ namespace DataBox
             {
                 public const string DataBox = "数据盒子";
                 public const string DataQuickFind = "快速查找";
-                public const string BatchExtraction = "批量提取";
-                public const string DataBoxInfo = "盒子信息";
                 public const string Binding = "绑定数据";
                 public const string UnBinding = "解绑数据";
+                public const string BatchExtraction = "批量提取";
                 public const string Launch = "开始提取";
                 public const string NewConfig = "新建配置";
+                public const string DataBoxInfo = "盒子信息";
+                public const string Updates = "检查更新";
                 public const string BoxInfo = "查看信息";
             }
 

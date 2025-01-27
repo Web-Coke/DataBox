@@ -1,40 +1,49 @@
-use crate::RefObj;
-use std::ffi::c_void;
+use crate::{RefObj, VERSION};
+use reqwest::blocking::Client;
+use serde::Deserialize;
+use std::time::Duration;
 
 const ZH_CN_UPDATE_URL: &str = "https://gitee.com/api/v5/repos/Web-Coke/DataBox/releases/latest";
 const EN_US_UPDATE_URL: &str = "https://api.github.com/repos/Web-Coke/DataBox/releases/latest";
 
+#[derive(Deserialize)]
 struct Releases {
     tag_name: Option<String>,
 }
 
 #[no_mangle]
 pub unsafe extern "C-unwind" fn CoreVersion() -> RefObj {
-    let mut version = env!("CARGO_PKG_VERSION")
-        .encode_utf16()
-        .collect::<Vec<u16>>();
-    version.push(0);
-    if let [.., dot, end] = &mut version[..] {
-        *end = *dot;
-        *dot = 46;
-    };
-    RefObj {
-        len: i32::try_from(version.len()).unwrap(),
-        rty: 2,
-        ptr: Box::into_raw(version.into_boxed_slice()) as *mut c_void,
-    }
-}
-
-fn IsThereNewVersion() -> bool {
-    true
+    RefObj::from_str(&*VERSION)
 }
 
 #[no_mangle]
-pub unsafe extern "C-unwind" fn ZH_CN_IsThereNewVersion(){
-
+pub unsafe extern "C-unwind" fn ZH_CN_IsThereNewVersion() -> bool {
+    Client::builder()
+        .timeout(Duration::from_secs(15))
+        .build()
+        .unwrap()
+        .get(ZH_CN_UPDATE_URL)
+        .send()
+        .unwrap()
+        .json::<Releases>()
+        .unwrap()
+        .tag_name
+        .unwrap()
+        == *VERSION
 }
 
 #[no_mangle]
-pub unsafe extern "C-unwind" fn EN_US_IsThereNewVersion(){
-
+pub unsafe extern "C-unwind" fn EN_US_IsThereNewVersion() -> bool {
+    Client::builder()
+        .timeout(Duration::from_secs(15))
+        .build()
+        .unwrap()
+        .get(EN_US_UPDATE_URL)
+        .send()
+        .unwrap()
+        .json::<Releases>()
+        .unwrap()
+        .tag_name
+        .unwrap()
+        == *VERSION
 }

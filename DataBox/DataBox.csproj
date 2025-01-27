@@ -137,6 +137,7 @@
     <EmbeddedResource Include="Ribbon\RibbonUI.xml" />
     <Content Include="Ribbon\Src\AliPay.png" />
     <Content Include="Ribbon\Src\WeChat.png" />
+    <None Include="Ribbon\Src\检查更新.png" />
     <Content Include="Ribbon\Src\绑定数据.png" />
     <Content Include="Ribbon\Src\解绑数据.png" />
   </ItemGroup>

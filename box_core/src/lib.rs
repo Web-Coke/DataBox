@@ -4,6 +4,7 @@ use std::{
     mem::transmute,
     ptr::{slice_from_raw_parts, slice_from_raw_parts_mut},
     str,
+    sync::LazyLock,
 };
 
 mod _test;
@@ -11,6 +12,16 @@ mod geo;
 mod ribbon;
 mod text;
 mod time;
+
+static VERSION: LazyLock<String> = LazyLock::new(|| {
+    let mut version = env!("CARGO_PKG_VERSION").as_bytes().to_vec();
+    version.push(0);
+    if let [.., dot, end] = &mut version[..] {
+        *end = *dot;
+        *dot = 46;
+    };
+    unsafe { String::from_utf8_unchecked(version) }
+});
 
 #[macro_export]
 macro_rules! func {
@@ -194,49 +205,24 @@ impl RefObj {
                     Self::RefObjDispose(this)
                 }
             }
-            1 => {
-                drop(Box::from_raw(slice_from_raw_parts_mut(
-                    self.ptr as *mut u8,
-                    self.len as usize,
-                )))
-            }
-            2 => {
-                drop(Box::from_raw(slice_from_raw_parts_mut(
-                    self.ptr as *mut u16,
-                    self.len as usize,
-                )))
-            }
-            4 => {
-                drop(Box::from_raw(slice_from_raw_parts_mut(
-                    self.ptr as *mut u32,
-                    self.len as usize,
-                )))
-            }
-            8 => {
-                drop(Box::from_raw(slice_from_raw_parts_mut(
-                    self.ptr as *mut u64,
-                    self.len as usize,
-                )))
-            }
+            1 => drop(Box::from_raw(slice_from_raw_parts_mut(
+                self.ptr as *mut u8,
+                self.len as usize,
+            ))),
+            2 => drop(Box::from_raw(slice_from_raw_parts_mut(
+                self.ptr as *mut u16,
+                self.len as usize,
+            ))),
+            4 => drop(Box::from_raw(slice_from_raw_parts_mut(
+                self.ptr as *mut u32,
+                self.len as usize,
+            ))),
+            8 => drop(Box::from_raw(slice_from_raw_parts_mut(
+                self.ptr as *mut u64,
+                self.len as usize,
+            ))),
             _ => return,
         }
-    }
-}
-
-#[no_mangle]
-pub unsafe extern "C-unwind" fn CoreVersion() -> RefObj {
-    let mut version = env!("CARGO_PKG_VERSION")
-        .encode_utf16()
-        .collect::<Vec<u16>>();
-    version.push(0);
-    if let [.., dot, end] = &mut version[..] {
-        *end = *dot;
-        *dot = 46;
-    };
-    RefObj {
-        len: i32::try_from(version.len()).unwrap(),
-        rty: 2,
-        ptr: Box::into_raw(version.into_boxed_slice()) as *mut c_void,
     }
 }
 

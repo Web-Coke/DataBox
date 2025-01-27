@@ -64,16 +64,18 @@ namespace DataBox.Ribbon
                     return Basics.DataBox;
                 case "DataQuickFind":
                     return Basics.DataQuickFind;
-                case "BatchExtraction":
-                    return Basics.BatchExtraction;
-                case "DataBoxInfo":
-                    return Basics.DataBoxInfo;
                 case "BindingBtn":
                     return DataQuickFindCS.ISNone ? Basics.Binding : Basics.UnBinding;
+                case "BatchExtraction":
+                    return Basics.BatchExtraction;
                 case "LaunchBtn":
                     return Basics.Launch;
                 case "ConfigBtn":
                     return Basics.NewConfig;
+                case "DataBoxInfo":
+                    return Basics.DataBoxInfo;
+                case "UpdatesBtn":
+                    return Basics.Updates;
                 case "BoxInfoBtn":
                     return Basics.BoxInfo;
                 default:
@@ -91,6 +93,8 @@ namespace DataBox.Ribbon
                     return Resources.开始提取;
                 case "ConfigBtn":
                     return Resources.新建配置;
+                case "UpdatesBtn":
+                    return Resources.检查更新;
                 case "BoxInfoBtn":
                     return Resources.查看信息;
                 default:
@@ -111,6 +115,8 @@ namespace DataBox.Ribbon
                     return;
                 case "ConfigBtn":
                     new NewConfig().Show();
+                    return;
+                case "UpdatesBtn":
                     return;
                 case "BoxInfoBtn":
                     new DataBoxInfo().Show();
