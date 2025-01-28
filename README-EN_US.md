@@ -1,8 +1,8 @@
 <div align="center">
 <p><img alt="DataBox" width="256" style="max-width:40%;min-width:60px;" src="https://github.com/Web-Coke/DataBox/blob/main/DataBox.png" /></p>
 <p>
-    <a href="https://github.com/Web-Coke/DataBox/README.md">简体中文</a>
-    <a href="https://github.com/Web-Coke/DataBox/README-EN_US.md">English</a>
+    <a href="README.md">简体中文</a>
+    <a href="README-EN_US.md">English</a>
 </p>
 <p>
 
