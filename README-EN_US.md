@@ -88,10 +88,10 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | FCOUNTS(Key)                         | 统计给定值在索引中出现的次数     | Key:给定值                                       |
 | **FGETKEY**()                  | 获取去重后的索引                 |                                                  |
 
-## 真值表
+## Truth table
 
-|           AND(与)           |           OR(或)           |       NOT(非)       |          XOR(异或)          |
-| :-------------------------: | :------------------------: | :------------------: | :-------------------------: |
+|            AND            |            OR            |       NOT       |          XOR          |
+| :-----------------------: | :----------------------: | :-------------: | :-------------------: |
 | False `AND` False = False | False `OR` False = False | `NOT` False = True | False `XOR` False = False |
 | False `AND` True = False |  False `OR` True = True  | `NOT` True = False | False `XOR` False = True |
 |  True `AND` True = False  |  False `OR` True = True  |                      | False `XOR` False = True |
