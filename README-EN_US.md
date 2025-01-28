@@ -161,37 +161,37 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | u    | 默认匹配规则                                   |
 | x    | 注释模式, 忽略空格并允许行注释, 注释以`#`开头  |
 
-## 贡献
+## Contribute
 
-如果您有好的建议, 请复刻Fork本仓库并且创建一个拉取请求(pull request)
+If you have a good suggestion, fork the repository and create a pull request
 
-当然您也可以提交一个issue, 并且添加标签(enhancement)
+Of course, you can also file an issue with an enhancement
 
-不要忘记给项目点一个Star, 再次感谢❗❗❗
+Don't forget to give the project a Star, thanks again ❗❗❗
 
 <a href="https://github.com/Web-Coke/DataBox/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Web-Coke/DataBox" />
 </a>
 
-## 赞助
+## Sponsor
 
-DataBox是一个开源项目, 您毫不吝啬滴赞赏和Star是对此项目的最大肯定
+DataBox is an open source project, and you don't hesitate to praise it and Star is the biggest affirmation of this project
 
 <p style="text-align: center;">
 <img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/AliPay.png" alt="Alipay" width="180"/>
 <img src="https://github.com/Web-Coke/DataBox/blob/main/DataBox/Ribbon/Src/WeChat.png" alt="WeChat" width="180"/>
 </p>
 
-## 开源协议
+## Open-Source Protocol
 
-DataBox采用[MIT](LICENSE)开源协议
+DataBox uses the [MIT](LICENSE) open source license
 
-## 现存问题说明
+## Description of existing problems
 
-- 在旧版WPS中溢出型函数的计算结果不会完整显示, WPS最新版与Excel中则可以正常显示计算结果, 旧版WPS不支持溢出型函数
+- In the old version of WPS, the calculation results of overflow functions are not displayed completely, but in the latest version of WPS and Excel, the calculation results can be displayed normally, and the old version of WPS does not support overflow functions
 
 ---
 
-> 加载项使用中有任何建议、反馈、疑问请与我联系
+> Please contact me if you have any suggestions, feedback, or questions about using the add-in
 >
 > Email:`web-chang@foxmail.com`
