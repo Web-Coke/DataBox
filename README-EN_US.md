@@ -47,46 +47,46 @@ To get you up and running quickly, this project provides an [Example](https://gi
 
 ### 1 Time Calculation
 
-| 函数名称                                                     | 函数说明                                              | 参数说明                                                     |
-| :----------------------------------------------------------- | :---------------------------------------------------- | ------------------------------------------------------------ |
-| AdjustTime(Time, <u>Year</u>, <u>Month</u>, <u>Day</u>, <u>Hour</u>, <u>Minute</u>, <u>Second</u>) | 调整给定时间                                          | Time:给定时间<br/><u>Year</u>:年<br/><u>Month</u>:月<br/><u>Day</u>:日<br/><u>Hour</u>:分<br/><u>Second</u>:秒 |
-| **SecToTime**(**Sec**)                                       | 将秒转换为[hh]:mm:ss格式的时间                        | Sec:需转换的秒数                                             |
-| **TimeSub**(**TimeI**, **TimeN**)                            | 计算两个时间的差值<br/>输出以秒为单位                 | TimeI:第一个时间<br/>TimeN:第二个时间                        |
-| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | 计算两个时间在计算在内时间中的差值<br/>输出以秒为单位 | TimeI:第一个时间<br/>TimeN:第二个时间<br/>Includ:计算在内的时间 |
+| Function name                                                | Function description                                         | Parameter description                                        |
+| :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
+| AdjustTime(Time, <u>Year</u>, <u>Month</u>, <u>Day</u>, <u>Hour</u>, <u>Minute</u>, <u>Second</u>) | Adjust the given time                                        | Time:Given time<br/><u>Year</u>:Year<br/><u>Month</u>:Month<br/><u>Day</u>:Day<br/><u>Hour</u>:Hour<br/><u>Minute</u>:Minute<br/><u>Second</u>:Second |
+| **SecToTime**(**Sec**)                                       | The time to convert seconds to [hh]:mm:ss format             | Sec:The number of seconds to convert                         |
+| **TimeSub**(**TimeI**, **TimeN**)                            | Calculate the difference between the two times<br/>The output is in seconds | TimeI:The first time<br/>TimeN:The second time               |
+| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | Calculate the difference between two times in the calculated includ time<br/>The output is in seconds        | TimeI:The first time<br/>TimeN:The second time<br/>Includ:Calculated includ time |
 
 ### 2 Coordinate Calculation
 
-| 函数名称                         | 函数说明                                                                        | 参数说明                                                                                |
-| :------------------------------- | :------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| Distance(Lon1, Lat1, Lon2, Lat2) | 计算两个WGS84坐标经纬度之间的距离<br/>输出以米为单位 |Lon1:第一个经度<br/>Lat1:第一个纬度<br/>Lon2:第二个经度<br/>Lat2:第二个纬度|
+| Function name                    | Function description                                         | Parameter description                                        |
+| :------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
+| Distance(Lon1, Lat1, Lon2, Lat2) | Calculate the distance between two WG S84 coordinates latitude and longitude<br/>The output is in meters | Lon1:The first longitude<br/>Lat1:The first latitude<br/>Lon2:The second longitude<br/>Lat2:The second latitude |
 
 ### 3 Text Processing
 
-| 函数名称                                  | 函数说明                                                     | 参数说明                                                     |
+| Function name                             | Function description                                         | Parameter description                                        |
 | :---------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
-| **IsMatch**(**Input**, Pattern)           | 检查输入的字符串是否可被正则表达式匹配<br/>匹配成功返回True  失败则返回False | **Input**:输入的字符串<br/>Pattern:正则表达式                |
-| **Matches**(Input, Pattern, <u>Label</u>) | 返回输入的字符串在正则表达式中匹配到的所有(标签)内容         | Input:输入的字符串<br/>Pattern:正则表达式<br/><u>Label</u>:标签, 可选参数, 标签需带"$"号 |
-| **Replaces**(**Input**, Pattern, Replace) | 替换输入的字符串中被正则表达式匹配到的部分为指定字符串       | **Input**:输入的字符串<br/>Pattern:正则表达式<br/>Replace:指定字符串, 标签需带"$"号 |
+| **IsMatch**(**Input**, Pattern)           | Check if the entered string can be matched by a regular expression<br/>If the match is successful, it will return True, and if it fails, it will return False | **Input**:The string entered<br/>Pattern:regular expression                |
+| **Matches**(Input, Pattern, <u>Label</u>) | Returns all (or label) content of the entered string that matches in the regular expression         | Input:The string entered<br/>Pattern:regular expression<br/><u>Label</u>:label, optional parameter, label with "$" sign |
+| **Replaces**(**Input**, Pattern, Replace) | The part of the input string that is matched by the regular expression is the specified string       | **Input**:The string entered<br/>Pattern:regular expression<br/>Replace:Specify a string with a "$" sign in the label |
 
 ### 4 Scope Processing
 
-| 函数名称                                  | 函数说明                                                     | 参数说明                                                   |
-| ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| **VLOOKUP2**(Value, **Array**, **Finds**) | VLOOKUP函数的升级版<br/>该函数返回多个查找的结果<br/>当未找到结果时返回#VALUE!错误<br/>数据多时建议使用数据快查功能 | Value:指定值<br/>**Array**:指定范围<br/>**Finds**:返回范围 |
-| **ANDS**(**Lhs**, **Rhs**)                | 将**Lhs**与**Rhs**按顺序进行AND操作                          | **Lhs**:左值范围<br/>**Rhs**:右值范围                      |
-| **ORS**(**Lhs**, **Rhs**)                 | 将**Lhs**与**Rhs**按顺序进行OR操作                           | **Lhs**:左值范围<br/>**Rhs**:右值范围                      |
-| **XORS**(**Lhs**, **Rhs**)                | 将**Lhs**与**Rhs**按顺序进行XOR操作                          | **Lhs**:左值范围<br/>**Rhs**:右值范围                      |
-| **NOTS**(**Array**)                       | 将**Array**进行NOT操作                                       | **Array**:指定范围                                         |
+| Function name                             | Function description                                         | Parameter description                                        |
+| ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **VLOOKUP2**(Value, **Array**, **Finds**) | An upgraded version of the VLOOKUP function<br/>This function returns the results of multiple lookups<br/>Return error #VALUE! when the search result is empty<br/>If there is a lot of data, we recommend that you use the `Data Quick Find` | Value:Specify a value<br/>**Array**:Specify the scope<br/>**Finds**:Return range |
+| **ANDS**(**Lhs**, **Rhs**)                | AND the **Lhs** and **Rhs** in order                          | **Lhs**:Lvalue range<br/>**Rhs**:Rvalue range                |
+| **ORS**(**Lhs**, **Rhs**)                 | OR the **Lhs** and **Rhs** in order                           | **Lhs**:Lvalue range<br/>**Rhs**:Rvalue range                |
+| **XORS**(**Lhs**, **Rhs**)                | XOR the **Lhs** and **Rhs** in order                          | **Lhs**:Lvalue range<br/>**Rhs**:Rvalue range                |
+| **NOTS**(**Array**)                       | Perform the NOT operation with the `**Array**`                                       | **Array**:Given range                                           |
 
 ### 5 Data Quick Find
 
 > Before using the following functions, bind data in the ribbon
 
-| 函数名称                             | 函数说明                         | 参数说明                                         |
+| Function name                | Function description     | 参数说明                                         |
 | :----------------------------------- | -------------------------------- | ------------------------------------------------ |
-| **FLOOKUP**(Key, SerialNumber) | 在索引中检索给定值并返回对应数据 | Key:给定值<br>SerialNumber:数据所在列的序号 |
-| FCOUNTS(Key)                         | 统计给定值在索引中出现的次数     | Key:给定值                                       |
-| **FGETKEY**()                  | 获取去重后的索引                 |                                                  |
+| **FLOOKUP**(Key, SerialNumber) | Retrieve a given value in the index and return the corresponding data | Key:Given value<br>SerialNumber:The ordinal number of the column in which the data resides |
+| FCOUNTS(Key)                         | Count the number of times a given value appears in the index     | Key:Given value                                       |
+| **FGETKEY**()                  | Get the deduplicated index                 |                                                  |
 
 ## Truth table
 
@@ -103,63 +103,151 @@ To get you up and running quickly, this project provides an [Example](https://gi
 >
 > Please set `FLAVOR` to `Rust`
 >
-> 正则引擎遵守[Unicode® Technical Standard #18](https://www.unicode.org/reports/tr18/)规范(https://www.unicode.org/reports/tr18/)
+> The regular expression engine complies with the [Unicode® Technical Standard #18](https://www.unicode.org/reports/tr18/) specification.
 >
 > The `Characters Set` please refer to:[Regex Tutorial - Unicode Characters and Properties](https://www.regular-expressions.info/unicode.html#prop)(https://www.regular-expressions.info/unicode.html#prop)
 
-| 基本表达式   | 描述                                                         |
-| :----------- | ------------------------------------------------------------ |
-| .            | 匹配除换行符外的任何字符                                     |
-| [0-9]        | 匹配任何ASCII数字                                            |
-| \d           | 数字, 包括`𝟙𝟚𝟛`这样的数字                                    |
-| \D           | 非数字                                                       |
-| \p{`字符集`} | 匹配给定字符集                                               |
-| \P{`字符集`} | 不匹配给定的字符集                                           |
-| [xyz]        | 匹配所有的`xyz`                                              |
-| [^xyz]       | 除`xyz`之外的都匹配                                          |
-| [a-z]        | 匹配所有的小写字母`a-z`                                      |
-| [[:alpha:]]  | 匹配所有的大小写字母, 等同于`[A-Za-z]`                       |
-| [[:^alpha:]] | 除所有的大小写字母都匹配, 等同于`[^A-Za-z]`                  |
-| [x\[^xyz]]   | 嵌套/分组模式, 匹配除`y`和`z`之外的任何字符                  |
-| [a-y&&xyz]   | 交集模式, 匹配`x`或`y`                                       |
-| [0-9&&\[^4]] | 使用交集和求反进行减法, 匹配`0-9`, 但不包括`4`               |
-| [0-9--4]     | 直接减法, 匹配`0-9`, 但不包括`4`                             |
-| [a-g~~b-h]   | 对称差值, 仅匹配`a`和`h`                                     |
-| [\\[\\]]     | 转义, 匹配`[]`                                               |
-| xy           | 匹配所有的`xy`                                               |
-| x\|y         | 匹配`x`或`y`                                                 |
-| x*           | 匹配0个或多个`x`, 该模式为贪婪匹配, 会尽可能多的匹配         |
-| x+           | 匹配1个或多个`x`, 该模式为贪婪匹配, 会尽可能多的匹配         |
-| x?           | 匹配0个或1个`x`, 该模式为贪婪匹配, 会尽可能多的匹配          |
-| x*?          | 匹配0个或多个`x`, 该模式为非贪婪匹配, 也就是懒匹配, 会尽可能少的匹配 |
-| x+?          | 匹配1个或多个`x`, 该模式为非贪婪匹配, 也就是懒匹配, 会尽可能少的匹配 |
-| x??          | 匹配0个或1个`x`, 该模式为非贪婪匹配, 也就是懒匹配, 会尽可能少的匹配 |
-| x{n,m}       | 匹配`n-m`之间数量的`x`, 包括`n`和`m`, 该模式为贪婪匹配, 会尽可能多的匹配 |
-| x{n,}        | 匹配至少`n`个`x`, 该模式为贪婪匹配, 会尽可能多的匹配         |
-| x{n}         | 匹配刚好`n`个`x`                                             |
-| x{n,m}?      | 匹配`n-m`之间数量的`x`, 包括`n`和`m`,该模式为非贪婪匹配, 也就是懒匹配, 会尽可能少的匹配 |
-| x{n,}?       | 匹配至少`n`个`x`, 该模式为非贪婪匹配, 也就是懒匹配, 会尽可能少的匹配 |
-| x{n}?        | 匹配刚好`n`个`x`                                             |
-| \b           | Unicode单词边界                                              |
-| \B           | 非Unicode单词边界                                            |
+### Matching one character
 
-| 分组模式                     | 描述                                 |
-| :--------------------------- | ------------------------------------ |
-| (`基本表达式`)             | 给匹配内容分组                       |
-| (?\<`name`>`基本表达式`) | 给匹配的分组命名, 名称必须为字母数字 |
-| (?:`基本表达式`)           | 非捕获的内容分组                     |
-| (?`标志`)                  | 在当前组中设置标志                   |
-| (?`标志`:`基本表达式`)   | 为匹配内容设置标志, 非捕获模式     |
+<pre>
+.             any character except new line (includes new line with s flag)
+[0-9]         any ASCII digit
+\d            digit (\p{Nd})
+\D            not digit
+\pX           Unicode character class identified by a one-letter name
+\p{Greek}     Unicode character class (general category or script)
+\PX           Negated Unicode character class identified by a one-letter name
+\P{Greek}     negated Unicode character class (general category or script)
+</pre>
 
-| 标志 | 描述                                           |
-| :--- | ---------------------------------------------- |
-| i    | 不区分大小写：字母同时匹配大写和小写           |
-| m    | 多行模式                                       |
-| s    | 允许`.`匹配换行符                              |
-| R    | 启用`CRLF`模式：启用多行模式时, 允许匹配`\r\n` |
-| U    | 交换贪婪匹配和非贪婪匹配的含义                 |
-| u    | 默认匹配规则                                   |
-| x    | 注释模式, 忽略空格并允许行注释, 注释以`#`开头  |
+### Character classes
+
+<pre>
+[xyz]         A character class matching either x, y or z (union).
+[^xyz]        A character class matching any character except x, y and z.
+[a-z]         A character class matching any character in range a-z.
+[[:alpha:]]   ASCII character class ([A-Za-z])
+[[:^alpha:]]  Negated ASCII character class ([^A-Za-z])
+[x[^xyz]]     Nested/grouping character class (matching any character except y and z)
+[a-y&amp;&amp;xyz]    Intersection (matching x or y)
+[0-9&amp;&amp;[^4]]   Subtraction using intersection and negation (matching 0-9 except 4)
+[0-9--4]      Direct subtraction (matching 0-9 except 4)
+[a-g~~b-h]    Symmetric difference (matching `a` and `h` only)
+[\[\]]        Escaping in character classes (matching [ or ])
+[a&amp;&amp;b]        An empty character class matching nothing
+</pre>
+
+### Composites
+
+<pre>
+xy    concatenation (x followed by y)
+x|y   alternation (x or y, prefer x)
+</pre>
+
+### Repetitions
+
+<pre>
+x*        zero or more of x (greedy)
+x+        one or more of x (greedy)
+x?        zero or one of x (greedy)
+x*?       zero or more of x (ungreedy/lazy)
+x+?       one or more of x (ungreedy/lazy)
+x??       zero or one of x (ungreedy/lazy)
+x{n,m}    at least n x and at most m x (greedy)
+x{n,}     at least n x (greedy)
+x{n}      exactly n x
+x{n,m}?   at least n x and at most m x (ungreedy/lazy)
+x{n,}?    at least n x (ungreedy/lazy)
+x{n}?     exactly n x
+</pre>
+
+
+### Empty matches
+
+<pre>
+^               the beginning of a haystack (or start-of-line with multi-line mode)
+$               the end of a haystack (or end-of-line with multi-line mode)
+\A              only the beginning of a haystack (even with multi-line mode enabled)
+\z              only the end of a haystack (even with multi-line mode enabled)
+\b              a Unicode word boundary (\w on one side and \W, \A, or \z on other)
+\B              not a Unicode word boundary
+\b{start}, \&lt;   a Unicode start-of-word boundary (\W|\A on the left, \w on the right)
+\b{end}, \&gt;     a Unicode end-of-word boundary (\w on the left, \W|\z on the right))
+\b{start-half}  half of a Unicode start-of-word boundary (\W|\A on the left)
+\b{end-half}    half of a Unicode end-of-word boundary (\W|\z on the right)
+</pre>
+
+### Grouping and flags
+
+<pre>
+(exp)          numbered capture group (indexed by opening parenthesis)
+(?P&lt;name&gt;exp)  named (also numbered) capture group (names must be alpha-numeric)
+(?&lt;name&gt;exp)   named (also numbered) capture group (names must be alpha-numeric)
+(?:exp)        non-capturing group
+(?flags)       set flags within current group
+(?flags:exp)   set flags for exp (non-capturing)
+</pre>
+
+### Escape sequences
+
+<pre>
+\*              literal *, applies to all ASCII except [0-9A-Za-z&lt;&gt;]
+\a              bell (\x07)
+\f              form feed (\x0C)
+\t              horizontal tab
+\n              new line
+\r              carriage return
+\v              vertical tab (\x0B)
+\A              matches at the beginning of a haystack
+\z              matches at the end of a haystack
+\b              word boundary assertion
+\B              negated word boundary assertion
+\b{start}, \&lt;   start-of-word boundary assertion
+\b{end}, \&gt;     end-of-word boundary assertion
+\b{start-half}  half of a start-of-word boundary assertion
+\b{end-half}    half of a end-of-word boundary assertion
+\123            octal character code, up to three digits (when enabled)
+\x7F            hex character code (exactly two digits)
+\x{10FFFF}      any hex character code corresponding to a Unicode code point
+\u007F          hex character code (exactly four digits)
+\u{7F}          any hex character code corresponding to a Unicode code point
+\U0000007F      hex character code (exactly eight digits)
+\U{7F}          any hex character code corresponding to a Unicode code point
+\p{Letter}      Unicode character class
+\P{Letter}      negated Unicode character class
+\d, \s, \w      Perl character class
+\D, \S, \W      negated Perl character class
+</pre>
+
+### Perl character classes (Unicode friendly)
+
+<pre>
+\d     digit (\p{Nd})
+\D     not digit
+\s     whitespace (\p{White_Space})
+\S     not whitespace
+\w     word character (\p{Alphabetic} + \p{M} + \d + \p{Pc} + \p{Join_Control})
+\W     not word character
+</pre>
+
+### ASCII character classes
+
+<pre>
+[[:alnum:]]    alphanumeric ([0-9A-Za-z])
+[[:alpha:]]    alphabetic ([A-Za-z])
+[[:ascii:]]    ASCII ([\x00-\x7F])
+[[:blank:]]    blank ([\t ])
+[[:cntrl:]]    control ([\x00-\x1F\x7F])
+[[:digit:]]    digits ([0-9])
+[[:graph:]]    graphical ([!-~])
+[[:lower:]]    lower case ([a-z])
+[[:print:]]    printable ([ -~])
+[[:punct:]]    punctuation ([!-/:-@\[-`{-~])
+[[:space:]]    whitespace ([\t\n\v\f\r ])
+[[:upper:]]    upper case ([A-Z])
+[[:word:]]     word characters ([0-9A-Za-z_])
+[[:xdigit:]]   hex digit ([0-9A-Fa-f])
+</pre>
 
 ## Contribute
 
