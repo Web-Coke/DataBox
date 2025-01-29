@@ -50,9 +50,9 @@ DataBox是一个基于[Excel-DNA](https://github.com/Excel-DNA)的Excel加载项
 | 函数名称                                                     | 函数说明                                              | 参数说明                                                     |
 | :----------------------------------------------------------- | :---------------------------------------------------- | ------------------------------------------------------------ |
 | AdjustTime(Time, <u>Year</u>, <u>Month</u>, <u>Day</u>, <u>Hour</u>, <u>Minute</u>, <u>Second</u>) | 调整给定时间                                          | Time:给定时间<br/><u>Year</u>:年<br/><u>Month</u>:月<br/><u>Day</u>:日<br/><u>Hour</u>:时<br/><u>Minute</u>:分<br/><u>Second</u>:秒 |
-| **SecToTime**(**Sec**)                                       | 将秒转换为[hh]:mm:ss格式的时间                        | Sec:需转换的秒数                                             |
-| **TimeSub**(**TimeI**, **TimeN**)                            | 计算两个时间的差值<br/>输出以秒为单位                 | TimeI:第一个时间<br/>TimeN:第二个时间                        |
-| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | 计算两个时间在计算在内时间中的差值<br/>输出以秒为单位 | TimeI:第一个时间<br/>TimeN:第二个时间<br/>Includ:计算在内的时间 |
+| **SecToTime**(**Sec**)                                       | 将秒转换为[hh]:mm:ss格式的时间                        | **Sec**:需转换的秒数                                             |
+| **TimeSub**(**TimeI**, **TimeN**)                            | 计算两个时间的差值<br/>输出以秒为单位                 | **TimeI**:第一个时间<br/>**TimeN**:第二个时间                        |
+| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | 计算两个时间在计算在内时间中的差值<br/>输出以秒为单位 | **TimeI**:第一个时间<br/>**TimeN**:第二个时间<br/>Includ:计算在内的时间 |
 
 ### 2 坐标计算
 

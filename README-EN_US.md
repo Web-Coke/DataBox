@@ -50,9 +50,9 @@ To get you up and running quickly, this project provides an [Example](https://gi
 | Function name                                                | Function description                                         | Parameter description                                        |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | AdjustTime(Time, <u>Year</u>, <u>Month</u>, <u>Day</u>, <u>Hour</u>, <u>Minute</u>, <u>Second</u>) | Adjust the given time                                        | Time:Given time<br/><u>Year</u>:Year<br/><u>Month</u>:Month<br/><u>Day</u>:Day<br/><u>Hour</u>:Hour<br/><u>Minute</u>:Minute<br/><u>Second</u>:Second |
-| **SecToTime**(**Sec**)                                       | The time to convert seconds to [hh]:mm:ss format             | Sec:The number of seconds to convert                         |
-| **TimeSub**(**TimeI**, **TimeN**)                            | Calculate the difference between the two times<br/>The output is in seconds | TimeI:The first time<br/>TimeN:The second time               |
-| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | Calculate the difference between two times in the calculated includ time<br/>The output is in seconds        | TimeI:The first time<br/>TimeN:The second time<br/>Includ:Calculated includ time |
+| **SecToTime**(**Sec**)                                       | The time to convert seconds to [hh]:mm:ss format             | **Sec**:The number of seconds to convert                         |
+| **TimeSub**(**TimeI**, **TimeN**)                            | Calculate the difference between the two times<br/>The output is in seconds | **TimeI**:The first time<br/>**TimeN**:The second time               |
+| **TimeSub2**(**TimeI**, **TimeN**, Includ)                   | Calculate the difference between two times in the calculated includ time<br/>The output is in seconds        | **TimeI**:The first time<br/>**TimeN**:The second time<br/>Includ:Calculated includ time |
 
 ### 2 Coordinate Calculation
 
