@@ -103,7 +103,7 @@ pub unsafe extern "C-unwind" fn Conversion(mut index: i32) -> RefObj {
 mod test {
     use super::*;
     #[test]
-    fn test_conversion() {
+    fn conversion_test() {
         unsafe {
             for i in 1..255 {
                 println!("{}", Conversion(i).into_str());

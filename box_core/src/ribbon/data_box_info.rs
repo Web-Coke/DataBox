@@ -1,12 +1,12 @@
 use crate::{RefObj, VERSION};
 use reqwest::blocking::Client;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use std::time::Duration;
 
 const ZH_CN_UPDATE_URL: &str = "https://gitee.com/api/v5/repos/Web-Coke/DataBox/releases/latest";
 const EN_US_UPDATE_URL: &str = "https://api.github.com/repos/Web-Coke/DataBox/releases/latest";
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize)]
 struct Releases {
     tag_name: Option<String>,
 }
@@ -46,4 +46,13 @@ pub unsafe extern "C-unwind" fn EN_US_IsThereNewVersion() -> bool {
         .tag_name
         .unwrap()
         == *VERSION
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    #[test]
+    fn is_there_new_version_test() {
+        unsafe { assert_eq!(ZH_CN_IsThereNewVersion(), EN_US_IsThereNewVersion()) }
+    }
 }
