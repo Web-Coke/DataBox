@@ -2,7 +2,7 @@ use std::fs::remove_file;
 
 use crate::{Resources, ALL_RESOURCES, INSTALL_DIR};
 
-fn remome_resources() {
+pub fn remome_resources() {
     if INSTALL_DIR.exists() && INSTALL_DIR.is_dir() {
         for Resources { name, .. } in ALL_RESOURCES {
             let file_path = INSTALL_DIR.join(name);

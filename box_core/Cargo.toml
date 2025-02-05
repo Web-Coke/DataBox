@@ -1,5 +1,5 @@
 [package]
-name = "tool_core"
+name = "box_core"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

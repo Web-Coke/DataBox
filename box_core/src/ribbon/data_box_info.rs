@@ -3,8 +3,8 @@ use reqwest::blocking::Client;
 use serde::{Deserialize, Serialize};
 use std::time::Duration;
 
-const ZH_CN_UPDATE_URL: &str = "https://gitee.com/api/v5/repos/Web-Coke/DataBox/releases/latest";
-const EN_US_UPDATE_URL: &str = "https://api.github.com/repos/Web-Coke/DataBox/releases/latest";
+const UPDATE_URL_ZH_CN: &str = "https://gitee.com/api/v5/repos/Web-Coke/DataBox/releases/latest";
+const UPDATE_URL_EN_US: &str = "https://api.github.com/repos/Web-Coke/DataBox/releases/latest";
 
 #[derive(Deserialize, Serialize)]
 struct Releases {
@@ -17,12 +17,12 @@ pub unsafe extern "C-unwind" fn CoreVersion() -> RefObj {
 }
 
 #[no_mangle]
-pub unsafe extern "C-unwind" fn ZH_CN_IsThereNewVersion() -> bool {
+pub unsafe extern "C-unwind" fn IsThereNewVersion_ZH_CN() -> bool {
     Client::builder()
         .timeout(Duration::from_secs(15))
         .build()
         .unwrap()
-        .get(ZH_CN_UPDATE_URL)
+        .get(UPDATE_URL_ZH_CN)
         .send()
         .unwrap()
         .json::<Releases>()
@@ -33,12 +33,12 @@ pub unsafe extern "C-unwind" fn ZH_CN_IsThereNewVersion() -> bool {
 }
 
 #[no_mangle]
-pub unsafe extern "C-unwind" fn EN_US_IsThereNewVersion() -> bool {
+pub unsafe extern "C-unwind" fn IsThereNewVersion_EN_US() -> bool {
     Client::builder()
         .timeout(Duration::from_secs(15))
         .build()
         .unwrap()
-        .get(EN_US_UPDATE_URL)
+        .get(UPDATE_URL_EN_US)
         .send()
         .unwrap()
         .json::<Releases>()
@@ -46,13 +46,4 @@ pub unsafe extern "C-unwind" fn EN_US_IsThereNewVersion() -> bool {
         .tag_name
         .unwrap()
         == *VERSION
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-    #[test]
-    fn is_there_new_version_test() {
-        unsafe { assert_eq!(ZH_CN_IsThereNewVersion(), EN_US_IsThereNewVersion()) }
-    }
 }

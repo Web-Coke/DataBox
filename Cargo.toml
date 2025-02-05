@@ -7,9 +7,9 @@ version = "1.1.60"
 edition = "2021"
 authors = ["WebChang"]
 
-[profile.dev]
-opt-level = 3
-overflow-checks = false
+# [profile.dev]
+# opt-level = 3
+# overflow-checks = false
 
 [profile.release]
 opt-level = 3

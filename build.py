@@ -18,9 +18,10 @@ input("是否更新依赖库?(Y/-):\n") == "Y" and system("cargo update")
 RootPath = join(dirname(__file__), "target")
 [
     print(f"编译{E[0]}中...")
-    or system(f"cargo build --release -p tool_core --target {E[1]}")
+    or system(f"cargo build --release -p box_core --target {E[1]}")
     or exists(Destination := join(RootPath, "release", E[0]))
     and remove(Destination)
     or move(join(RootPath, E[1], "release", "core.dll"), Destination)
     for E in [["Core32.dll", "i686-pc-windows-msvc"], ["Core64.dll", "x86_64-pc-windows-msvc"]]
 ]
+system("cargo build --release -p box_load")
