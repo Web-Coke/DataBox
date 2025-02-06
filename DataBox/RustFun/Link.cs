@@ -171,6 +171,7 @@ namespace DataBox.RustFun
             }
         }
 
+        [Obsolete(LANGUAGE.Link.RefObjInterleavedArrayObsolete, false)]
         public RefObj FromNumArr<T>(T[][] val)
             where T : struct
         {
@@ -199,6 +200,7 @@ namespace DataBox.RustFun
             }
         }
 
+        [Obsolete(LANGUAGE.Link.RefObjInterleavedArrayObsolete, false)]
         public T[][] ToNumArr<T>()
             where T : struct
         {

@@ -1,8 +1,8 @@
+use crate::{Resources, ALL_RESOURCES, INSTALL_DIR};
 use std::fs::{create_dir_all, write};
 use std::mem::transmute;
 use winreg::enums::HKEY_CURRENT_USER;
 use winreg::RegKey;
-use crate::{Resources, ALL_RESOURCES, INSTALL_DIR};
 
 pub fn write_resources() {
     println!("写入资源 -> 开始写入资源");
@@ -59,7 +59,14 @@ pub fn excel_reg() {
     }
 }
 
-pub fn wpset_reg() {}
+pub fn wpset_reg() {
+    println!("开始安装 -> 为WPS Office安装DataBox");
+    let hkcu = RegKey::predef(HKEY_CURRENT_USER);
+    if let Ok(wpset_option) = hkcu.open_subkey(r"SOFTWARE\kingsoft\Office\6.0\Common") {
+    } else {
+        println!("安装失败 -> 注册表 SOFTWARE\\kingsoft\\Office\\6.0\\Common 为空, 此计算机可能未安装WPS Office, 请尝试手动安装")
+    }
+}
 
 #[cfg(test)]
 mod test {

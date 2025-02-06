@@ -130,21 +130,25 @@ fn is_run() {
     }
 }
 
-fn main() {
-    is_run();
-    let mut buf = [0; 1];
-    println!("{}", "*".repeat(64));
+fn box_info() {
     println!("DataBox基本信息:");
     println!("\tDataBox当前版本-> {}", {
         let mut version = env!("CARGO_PKG_VERSION").as_bytes().to_vec();
         version.push(0);
         if let [.., dot, end] = &mut version[..] {
             *end = *dot;
-            *dot = 46;
+            *dot = b'.';
         };
         unsafe { String::from_utf8_unchecked(version) }
     });
     println!("\tDataBox安装路径-> {}", INSTALL_DIR.display());
+}
+
+fn main() {
+    is_run();
+    println!("{}", "*".repeat(64));
+    box_info();
+    let mut buf = [0; 1];
     loop {
         println!("{}", "*".repeat(64));
         println!("请选择要进行的操作, 输入数字后按回车键确认");
@@ -159,6 +163,7 @@ fn main() {
             break;
         }
     }
+    println!("{}", "*".repeat(64));
     if buf[0] == b'1' {
         install()
     } else {

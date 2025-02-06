@@ -26,12 +26,11 @@ static VERSION: LazyLock<String> = LazyLock::new(|| {
 #[macro_export]
 macro_rules! func {
     () => {{
-        fn _f() {}
-        fn _type_name<T>(_: T) -> &'static str {
+        fn _type_name<T:Fn()>(_: T) -> &'static str {
             std::any::type_name::<T>()
         }
-        let name = _type_name(_f);
-        &name[..name.len() - 4]
+        let _type_name = _type_name(||{});
+        &_type_name[.._type_name.len() - 13]
     }};
 }
 

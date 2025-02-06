@@ -18,7 +18,9 @@ namespace DataBox
                 "由于找不到 Core.dll, 无法继续加载程序. 重新运行Dll加载程序可能会解决此问题";
             public const string LoadDllErrNull = "Dll加载失败! 错误代码:";
             public const string RefObjPointerObsolete =
-                "获取此值时请做好程序可能会抛出异常和内存泄露的心理准备, 除非你知道怎么做";
+                "获取此值时请做好程序抛出异常和内存泄露的准备, 除非你知道你要干什么";
+            public const string RefObjInterleavedArrayObsolete =
+                "非交错数组不建议使用, 建议重新手搓实现, 重写索引器";
         }
 
         namespace Fun
